@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm("Post", "Home", FormMethod.Post))
+{
+    <p>
+    <br>
+    <br>
+    Contador: @ViewData["contador"]
+    <br>
+    <br>
+    <input type="submit" name="submit" value="OK" class="btn-primary" />
+    </p>
+}
+
+
