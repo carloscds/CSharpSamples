@@ -16,11 +16,14 @@ namespace ExemploRange
 
             string str = "Exemplo em C# 8";
 
-            foreach (var s in str[^4..^0])
-            {
-                Console.Write(s);
-            }
-            Console.WriteLine("");
+            string palavra = str[^4..^0];
+            Console.WriteLine(palavra);
+
+            string final = str[^4..];
+            Console.WriteLine(final);
+
+            string inicio = str[..7];
+            Console.WriteLine(inicio);
         }
     }
 }
