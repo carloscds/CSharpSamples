@@ -16,7 +16,7 @@ namespace ExemploRange
 
             string str = "Exemplo em C# 8";
 
-            foreach (var s in str[^4..str.Length])
+            foreach (var s in str[^4..^0])
             {
                 Console.Write(s);
             }
