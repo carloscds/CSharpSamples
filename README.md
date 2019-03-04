@@ -1,21 +1,21 @@
 # CSharpSamples
 Samples in C#
 
-## CentralizarJanela
+### CentralizarJanela
 How to centralize a Windows Form Screen
-## 	EFAsNoTracking	
+### EFAsNoTracking	
 How to use Entity Framework to get object without context tracking
-## ExemploFluentAPI	
+### ExemploFluentAPI	
 How to use Fluent
-## ExemploRange	
+### ExemploRange	
 C# 8 Range Index	
-## FileSerializeUnSerialize
+### FileSerializeUnSerialize
 How to serialize a file
-## NetworkCardInfo	
+### NetworkCardInfo	
 How to read network card information
-## StaticWeb	
+### StaticWeb	
 Static variable in web application	3 months ago
-## StringBuilderCompare	
+### StringBuilderCompare	
 StringBuilder x String Concat
-## StringsSpan
+### StringsSpan
 Span sample
