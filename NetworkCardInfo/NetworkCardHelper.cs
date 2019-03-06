@@ -24,7 +24,7 @@ namespace NetworkCardInfo
                 var gateway = Interface.GetIPProperties().GatewayAddresses;
                 foreach (UnicastIPAddressInformation UnicatIPInfo in UnicastIPInfoCol)
                 {
-                    rede.Append($"\tEndereço IP{(UnicatIPInfo.IPv4Mask.ToString() == "0.0.0.0" ? "v4" : "v6")}: {UnicatIPInfo.Address}{Environment.NewLine}");
+                    rede.Append($"\tEndereço IP{(UnicatIPInfo.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6 ? "v6" : "v4")}: {UnicatIPInfo.Address}{Environment.NewLine}");
                     rede.Append($"\tSubnet Mask: {UnicatIPInfo.IPv4Mask}{Environment.NewLine}");
                     foreach (var d in gateway)
                     {
