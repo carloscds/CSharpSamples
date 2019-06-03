@@ -19,3 +19,5 @@ Static variable in web application	3 months ago
 StringBuilder x String Concat
 ### StringsSpan
 Span sample
+### GetFrameworkVersion
+Get Assembly and TargetFramework Version
