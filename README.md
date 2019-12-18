@@ -21,3 +21,5 @@ StringBuilder x String Concat
 Span sample
 ### GetFrameworkVersion
 Get Assembly and TargetFramework Version
+### ExemploStorage
+Azure Storage Blob Sample Helper

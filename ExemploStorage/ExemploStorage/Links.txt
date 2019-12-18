@@ -1,0 +1,2 @@
+﻿Azure Storge Fluent:
+https://github.com/Azure-Samples/storage-dotnet-manage-storage-accounts
