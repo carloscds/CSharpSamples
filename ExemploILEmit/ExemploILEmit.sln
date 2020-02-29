@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29820.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploILEmit", "ExemploILEmit.csproj", "{A9B7D645-A5F8-48C8-B66E-1DF6EC72AFE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9B7D645-A5F8-48C8-B66E-1DF6EC72AFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B7D645-A5F8-48C8-B66E-1DF6EC72AFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B7D645-A5F8-48C8-B66E-1DF6EC72AFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B7D645-A5F8-48C8-B66E-1DF6EC72AFE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28413585-ED0A-452F-B69A-97E651F74F1D}
+	EndGlobalSection
+EndGlobal
