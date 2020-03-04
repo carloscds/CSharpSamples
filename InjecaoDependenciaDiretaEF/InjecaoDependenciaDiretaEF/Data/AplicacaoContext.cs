@@ -11,7 +11,6 @@ namespace InjecaoDependenciaDiretaEF.Data
     {
         public AplicacaoContext(DbContextOptions<AplicacaoContext> options) : base(options) 
         {
-            SeedData();
         }
     
         public DbSet<Cliente> Cliente { get; set; }
@@ -24,11 +23,9 @@ namespace InjecaoDependenciaDiretaEF.Data
             builder.Entity<Cliente>()
                 .Property(p => p.Nome)
                 .HasMaxLength(100);
-
-            base.OnModelCreating(builder);
         }
 
-        private void SeedData()
+        public void SeedData()
         {
             Cliente.Add(new Models.Cliente { Nome = "Carlos", LimiteCredito = 1000 });
             Cliente.Add(new Models.Cliente { Nome = "Maria", LimiteCredito = 5000 });
