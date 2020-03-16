@@ -48,6 +48,8 @@ namespace InjecaoDependenciaDiretaEF
 
             app.UseHttpsRedirection();
 
+            app.Seed();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -57,5 +59,16 @@ namespace InjecaoDependenciaDiretaEF
                 endpoints.MapControllers();
             });
         }
+
     }
+
+    public static class DataBaseExtend
+    {
+        public static void Seed(this IApplicationBuilder builder)
+        {
+            var db = builder.ApplicationServices.CreateScope().ServiceProvider.GetService<AplicacaoContext>();
+            db.SeedData();
+        }
+    }
+
 }
