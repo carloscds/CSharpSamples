@@ -8,6 +8,7 @@ namespace EFCoreSample.Domain
 
         public virtual Grupo Grupo { get; set;}
         public int GrupoId { get ;set;}
+        public bool Ativo{get; set;}
 
     }
 }
