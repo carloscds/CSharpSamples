@@ -14,9 +14,6 @@ namespace EFLog
             var hoje = DateTime.Now;
 
             var dados = db.Pedido.Where(w => w.Data == hoje).ToList();
-
-            //var pedido1 = db.Pedido.Where(w => w.Data >= hoje).Count();
-
         }
     }
 }
