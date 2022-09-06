@@ -21,13 +21,30 @@ namespace ConsultaCEPCorreios
                 localidade = dadosCorreios.@return.cidade,
                 uf = dadosCorreios.@return.uf
             };
+            Console.WriteLine("* CEP Correios *");
+            Console.WriteLine("----------------");
+            Console.WriteLine($"CEP: {cepCorreios.cep}");
+            Console.WriteLine($"Endereco: {cepCorreios.logradouro}");
+            Console.WriteLine($"Complemento: {cepCorreios.complemento}");
+            Console.WriteLine($"Bairro: {cepCorreios.bairro}");
+            Console.WriteLine($"Cidade: {cepCorreios.localidade}");
+            Console.WriteLine($"UF: {cepCorreios.uf}");
 
             var client = new HttpClient();
             var resultViaCEP = client.GetAsync("https://viacep.com.br/ws/86300000/json").Result;
             var dadosViaCEP = resultViaCEP.Content.ReadAsStringAsync().Result;
             var cepVIACEP = JsonConvert.DeserializeObject<CEP>(dadosViaCEP);
-
-
+            Console.WriteLine("\n* CEP VIACEP *");
+            Console.WriteLine("--------------");
+            Console.WriteLine($"CEP: {cepVIACEP.cep}");
+            Console.WriteLine($"Endereco: {cepVIACEP.logradouro}");
+            Console.WriteLine($"Complemento: {cepVIACEP.complemento}");
+            Console.WriteLine($"Bairro: {cepVIACEP.bairro}");
+            Console.WriteLine($"Cidade: {cepVIACEP.localidade}");
+            Console.WriteLine($"UF: {cepVIACEP.uf}");
+            Console.WriteLine($"Cod. IBGE: {cepVIACEP.ibge}");
+            Console.WriteLine($"Cod. SIAFI: {cepVIACEP.siafi}");
+            Console.WriteLine($"DDD: {cepVIACEP.ddd}");
         }
     }
 
