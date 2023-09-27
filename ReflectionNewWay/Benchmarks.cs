@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using System.Reflection;
 
 namespace ReflectionNewWay;
 
@@ -9,13 +10,21 @@ public class Benchmarks
     [Benchmark]
     public void Get_Method()
     {
-        NovoReflector.GetMethod(_teste);
+        var method = NovoReflector.GetMethod(_teste);
     }
 
     [Benchmark]
     public void Get_Field()
     {
         NovoReflector.GetField(_teste) = "Novo Field";
+    }
+
+    [Benchmark] 
+    public string Get_Reflection()
+    {
+        return (string)_teste.GetType()
+            .GetMethod("Metodo", BindingFlags.Instance | BindingFlags.NonPublic)!
+            .Invoke(_teste,Array.Empty<object>())!;
     }
 
 }
