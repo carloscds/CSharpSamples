@@ -27,8 +27,8 @@ namespace InjecaoDependenciaASPNETCore
         {
             services.AddControllers();
 
-            services.AddSingleton<IServico, Servico>();
-            services.AddSingleton<ExecutaServico, ExecutaServico>();
+            services.AddScoped<IServico, Servico>();
+            services.AddScoped<ExecutaServico, ExecutaServico>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
