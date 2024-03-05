@@ -16,16 +16,18 @@ namespace EFCoreSample
             var contextFactory = new ContextFactory();
             var db = contextFactory.CreateDbContext(null);
 
-            //var produto1 = db.Produto.FirstOrDefault(w => w.Id == 1) != null;//.FirstOrDefault();
-            //var produto1Exite = db.Produto.First(w => w.Id == 1) != null;
-             var produtos  = db.Produto.Where(p => p.GrupoId == 1)
+            var produtos  = db.Produto.Where(p => p.GrupoId == 1)
                      .Select(s => new {Id = s.Id, Nome = s.Nome});
+
+            var produtosGrupos = db.Produto.Where(p => p.GrupoId == 1)
+                    .Select(s => new { Id = s.Id, Nome = s.Nome, Grupo = s.Grupo.Nome });
+
             //  foreach(var p in produtos)
             //  {
             //      System.Console.WriteLine($"{p.Id} - {p.Nome}");
             //  }
             //var contemNome = db.Produto.Where(w => w.Nome.StartsWith("3"))
-                    //.ToList();
+            //.ToList();
             var nome = db.Produto.First(w => w.Nome == "Produto 3");
         }
 
