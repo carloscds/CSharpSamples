@@ -1,0 +1,47 @@
+name: Trigger auto deployment for container-app-vem37auzgs3yy
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ master ]
+    paths:
+    - 'codespacessample/**'
+    - '.github/workflows/container-app-vem37auzgs3yy-AutoDeployTrigger-a8294b0b-f43c-4d5a-940d-110ee02dcf3f.yml'
+
+  # Allow manual trigger 
+  workflow_dispatch:      
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions: 
+      id-token: write #This is required for requesting the OIDC JWT Token
+      contents: read #Required when GH token is used to authenticate with private repo
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.CONTAINERAPPVEM37AUZGS3YY_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.CONTAINERAPPVEM37AUZGS3YY_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.CONTAINERAPPVEM37AUZGS3YY_AZURE_SUBSCRIPTION_ID }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }}/codespacessample 
+          registryUrl: 
+          registryUsername: ${{ secrets.CONTAINERAPPVEM37AUZGS3YY_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.CONTAINERAPPVEM37AUZGS3YY_REGISTRY_PASSWORD }}
+          containerAppName: container-app-vem37auzgs3yy
+          resourceGroup: csharpsamplesaa52
+          imageToBuild: default/[parameters('containerAppName')]:${{ github.sha }}
+          _buildArgumentsKey_: |
+            _buildArgumentsValues_
+
+
