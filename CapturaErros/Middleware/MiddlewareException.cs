@@ -34,6 +34,7 @@ namespace CapturaErros.Middleware
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError; ;
             return context.Response.WriteAsync(result);
         }
+
         private static void MontaMensagemErro(List<ModelErrors> _modelErros, Exception ex)
         {
             _modelErros.Add(new ModelErrors { Mensagem = ex.Message, CodeTrace = ex.StackTrace });

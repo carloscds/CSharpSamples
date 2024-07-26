@@ -6,11 +6,11 @@
         {
             try
             {
-                throw new System.Exception("Erro na chamada");
+                throw new Exception("Erro na chamada");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                throw new System.Exception("Erro na chamada - Inner", ex);
+                throw new Exception("Erro na chamada - Inner", ex);
             }
         }
     }
