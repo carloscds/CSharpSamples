@@ -1,9 +1,5 @@
-﻿using CapturaErros.DTO;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System;
 using static System.Net.Mime.MediaTypeNames;
 using System.Net;
 
