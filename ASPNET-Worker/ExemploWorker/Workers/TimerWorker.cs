@@ -6,13 +6,12 @@ namespace ExemploWorker.Workers
     {
         private readonly ILogger<TimerWorker> _logger;
         private Timer? _timer;
-        private readonly ISendEmail _sendEmail; // enviar email
+        private readonly IServiceProvider _serviceProvider;
 
         public TimerWorker(ILogger<TimerWorker> logger, IServiceProvider service)
         {
             _logger = logger;
-            var scope = service.CreateScope().ServiceProvider; // criar escopo para injeção de dependência
-            _sendEmail = scope.GetRequiredService<ISendEmail>(); // enviar email
+            _serviceProvider = service;
         }
         public Task StartAsync(CancellationToken cancellationToken)
         {
@@ -23,7 +22,10 @@ namespace ExemploWorker.Workers
         private void DoWork(object? state)
         {
             _logger.LogInformation("Tempo contando: {time}", DateTimeOffset.Now);
-            _sendEmail.Enviar(); // enviar email
+
+            using var scope = _serviceProvider.CreateScope(); // criar escopo para injeção de dependência
+            var sendEmail = scope.ServiceProvider.GetRequiredService<ISendEmail>();  
+            sendEmail.Enviar(); // enviar email
         }
         public Task StopAsync(CancellationToken cancellationToken)
         {
