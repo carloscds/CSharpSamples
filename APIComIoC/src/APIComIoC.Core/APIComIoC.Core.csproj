@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\APIComIoC.Domain\APIComIoC.Domain.csproj" />
+    <ProjectReference Include="..\APIComIoC.InfraEstrutura\APIComIoC.InfraEstrutura.csproj" />
+  </ItemGroup>
+
+</Project>

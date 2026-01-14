@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/APIComIoC.API/APIComIoC.API.csproj" />
+  <Project Path="src/APIComIoC.Domain/APIComIoC.Domain.csproj" Id="5f8e3306-368f-42cf-b9b0-3dc4d3e4cf6e" />
+  <Project Path="src/APIComIoC.InfraEstrutura/APIComIoC.InfraEstrutura.csproj" Id="20679a14-9438-4c2d-8f07-95a80d86fcef" />
+  <Project Path="src/APIComIoC.Core/APIComIoC.Core.csproj" Id="95329712-2f16-4a7c-9336-a10fc6fbadc1" />
+</Solution>
