@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="HttpResilience/HttpResilience.csproj" />
+  <Project Path="TesteAPI/TesteAPI.csproj" Id="f266bc1e-281d-415c-a8d1-cff146c96904" />
+</Solution>
